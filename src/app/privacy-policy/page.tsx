@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
         >
           <h2>1. Introduction</h2>
           <p>
-            Welcome to <strong>Make It Editable</strong> ("we," "our," or "us").
+            Welcome to <strong>Make It Editable</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;).
             This Privacy Policy and Disclaimer explain how we handle user data,
             your responsibilities, and the limitations of our liability. By
             using the app, you agree to this policy and disclaimer. If you do
