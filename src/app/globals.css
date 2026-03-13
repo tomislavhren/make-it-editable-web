@@ -12,6 +12,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 body {
   background: var(--background);
