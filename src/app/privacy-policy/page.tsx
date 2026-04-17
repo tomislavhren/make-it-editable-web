@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "September 25, 2025"; // Update if you revise the policy
+const LAST_UPDATED = "April 17, 2026"; // Update if you revise the policy
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr"; // TODO: replace with your support email
 const JURISDICTION = "Croatia"; // TODO: replace with governing law location
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2025-09-25">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-04-17">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -113,21 +113,39 @@ export default function PrivacyPolicyPage() {
         >
           <h2>3. Information We Collect</h2>
           <p>
-            We{" "}
-            <strong>
-              do not collect, store, or process personal information
-            </strong>{" "}
-            from users. Specifically:
+            We do not require registration, login, or any personally
+            identifying information to use the app.
           </p>
+          <p>
+            We use <strong>PostHog</strong> to collect anonymous product
+            analytics. PostHog assigns a random device ID; we do not link this
+            to your name, email, or other identifiers.
+          </p>
+          <p>We record screen views and the following events:</p>
           <ul>
-            <li>No account creation or registration.</li>
-            <li>No tracking of visited URLs or edits made.</li>
-            <li>No analytics, cookies, or advertising identifiers.</li>
+            <li><code>website_preview_started</code></li>
+            <li><code>settings_opened</code></li>
+            <li><code>new_tab_created</code></li>
+            <li><code>tab_closed</code></li>
+            <li><code>screenshot_shared</code></li>
+            <li><code>edit_mode_toggled</code></li>
+            <li><code>formatting_applied</code></li>
+            <li><code>image_replaced</code></li>
+            <li><code>network_panel_opened</code></li>
+            <li><code>logs_panel_opened</code></li>
+            <li><code>element_inspector_opened</code></li>
+            <li><code>javascript_injected</code></li>
+            <li><code>webview_error_occurred</code></li>
           </ul>
           <p>
-            Because no personal data is collected, many data protection
-            obligations do not apply. If this changes in the future, we will
-            update this page and, where legally required, request consent.
+            Some of these events include the URL you entered (for example, when
+            you start a preview, open a new tab, share a screenshot, or when a
+            page fails to load) so we can understand which sites are used and
+            diagnose errors.
+          </p>
+          <p>
+            We <strong>do not</strong> collect the contents of the pages you
+            view or the edits you make.
           </p>
         </section>
 
@@ -182,9 +200,21 @@ export default function PrivacyPolicyPage() {
         >
           <h2>5. Third-Party Services</h2>
           <p>
-            The app does not include analytics SDKs, advertising networks, or
-            trackers. Any data processed by platform billing and distribution
-            (Google Play / Apple App Store) is governed by their policies above.
+            <strong>PostHog</strong> acts as a data processor for the anonymous
+            analytics described in Section 3. See{" "}
+            <a
+              href="https://posthog.com/privacy"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              posthog.com/privacy
+            </a>{" "}
+            for details.
+          </p>
+          <p>No advertising networks are integrated.</p>
+          <p>
+            Payment data is handled by Google Play and the Apple App Store,
+            governed by their policies linked above.
           </p>
         </section>
 
