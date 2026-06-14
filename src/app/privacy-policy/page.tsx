@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "May 18, 2026";
+const LAST_UPDATED = "June 14, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-05-18">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-06-14">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -113,8 +113,9 @@ export default function PrivacyPolicyPage() {
               photo library or camera.
             </li>
             <li>
-              Take a screenshot of the WebView and share it via your
-              device&apos;s native share sheet.
+              Take a screenshot of the WebView and either share it via your
+              device&apos;s native share sheet or save it directly to your
+              device&apos;s photo library.
             </li>
             <li>
               Use built-in developer tools: a network panel, a console logs
@@ -142,7 +143,8 @@ export default function PrivacyPolicyPage() {
           <ul>
             <li>
               <strong>Photo library</strong> — so you can pick an image from
-              your device to replace an image on the page.
+              your device to replace an image on the page, and so the app can
+              save screenshots you capture to your photo library.
             </li>
             <li>
               <strong>Camera</strong> — so you can capture a new photo to use
@@ -155,7 +157,8 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               <strong>Storage</strong> (legacy Android 12 and earlier) — to
-              save screenshots through the system share sheet.
+              save screenshots, whether through the system share sheet or
+              directly to your photo library.
             </li>
             <li>
               <strong>System overlay</strong> (Android) — used by the floating
