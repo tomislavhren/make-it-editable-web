@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "June 14, 2026";
+const LAST_UPDATED = "July 31, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-06-14">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-07-31">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -119,7 +119,13 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               Use built-in developer tools: a network panel, a console logs
-              panel, an element inspector, and a JavaScript injection tool.
+              panel, an element inspector, an in-page HTML and page-source
+              editor, a per-site custom CSS editor, and a JavaScript injection
+              tool.
+            </li>
+            <li>
+              Open an HTML or MHTML page you have saved on your device and edit
+              it in the same way as a live page.
             </li>
           </ul>
           <p>
@@ -148,12 +154,22 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               <strong>Camera</strong> — so you can capture a new photo to use
-              as a replacement image.
+              as a replacement image, and so websites loaded inside the WebView
+              can request camera access (for example, video-calling or
+              QR-scanning pages). We do not capture or transmit camera footage
+              ourselves.
             </li>
             <li>
               <strong>Microphone / audio recording</strong> — so websites
               loaded inside the WebView can request microphone access (for
               example, voice-enabled pages). We do not record audio ourselves.
+            </li>
+            <li>
+              <strong>Location</strong> — so websites loaded inside the WebView
+              can request your location through the standard browser
+              geolocation API (for example, map and store-finder pages). The
+              app never requests, stores, or transmits your location on its own
+              account, and your device asks you before any page is granted it.
             </li>
             <li>
               <strong>Storage</strong> (legacy Android 12 and earlier) — to
@@ -207,9 +223,21 @@ export default function PrivacyPolicyPage() {
             <li><code>network_panel_opened</code></li>
             <li><code>logs_panel_opened</code></li>
             <li><code>element_inspector_opened</code></li>
+            <li><code>html_editor_opened</code>, <code>html_edit_applied</code> — includes which editor was used (element, page source, or custom CSS)</li>
+            <li><code>custom_css_saved</code> — includes the length (not the contents) of the CSS and whether it was cleared</li>
+            <li><code>local_file_opened</code> — includes the file type (HTML or MHTML) and whether it was converted; never the file name or its contents</li>
+            <li><code>local_file_open_failed</code> — includes the error message</li>
+            <li><code>user_agent_panel_opened</code></li>
+            <li><code>user_agent_changed</code> — includes whether the device default was chosen and the length (not the value) of the user agent</li>
+            <li><code>bookmark_created</code>, <code>bookmark_updated</code>, <code>bookmark_deleted</code> — includes whether a user agent is set and the number of query parameters; never the name or URL</li>
+            <li><code>bookmark_opened</code>, <code>bookmark_capture_opened</code> — includes the URL (origin and path only)</li>
+            <li><code>screenshot_saved</code> — includes the current tab URL (origin and path only)</li>
+            <li><code>webview_external_handoff</code> — includes the URL the page tried to open (origin and path only) and whether it opened</li>
+            <li><code>webview_load_succeeded</code> — includes the hostname and the URL (origin and path only)</li>
             <li><code>javascript_injected</code> — includes the length (not the contents) of the injected code</li>
             <li><code>ai_js_generated</code> — includes the AI provider ID, model ID, and generated code length</li>
             <li><code>ai_js_generation_failed</code> — includes the AI provider ID and error message</li>
+            <li><code>ai_html_edit_generated</code>, <code>ai_html_edit_failed</code> — includes which editor was used and the generated code length (or the error message); never the page content sent to the provider</li>
             <li><code>storage_item_set</code>, <code>storage_item_deleted</code>, <code>storage_cleared</code> — includes which storage type was affected (localStorage, sessionStorage, or cookies); never includes keys or values</li>
             <li><code>paywall_shown</code>, <code>paywall_dismissed</code> — includes the trigger and outcome</li>
             <li><code>purchase_started</code>, <code>purchase_completed</code>, <code>purchase_cancelled</code>, <code>purchase_failed</code> — includes the product ID</li>
@@ -275,13 +303,42 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>
             <strong>AI providers (OpenAI, Anthropic, Google).</strong> The AI
-            JavaScript assistant is an optional feature that requires you to
-            supply your own API key in Settings. When you use it, your prompt
-            is sent directly from your device to your chosen provider. We do
-            not proxy, store, or log these requests. The API key itself is
-            stored only in your device&apos;s secure keystore and never
-            transmitted to us. Refer to your provider&apos;s own privacy policy
-            for how they handle API requests.
+            assistants are optional features that require you to supply your own
+            API key in Settings. When you use one, the request is sent directly
+            from your device to your chosen provider.
+          </p>
+          <p>
+            <strong>
+              What is included in an AI request.
+            </strong>{" "}
+            Alongside the instruction you type, the request contains the content
+            you asked the assistant to work on, taken from the page you are
+            viewing:
+          </p>
+          <ul>
+            <li>
+              <strong>HTML editor</strong> — the HTML of the element you
+              selected, or the full page source if you are editing the whole
+              page.
+            </li>
+            <li>
+              <strong>Custom CSS editor</strong> — the custom CSS you have
+              written for that site.
+            </li>
+            <li>
+              <strong>JavaScript assistant</strong> — your instruction only.
+            </li>
+          </ul>
+          <p>
+            This content is truncated to 30,000 characters and is sent only when
+            you actively submit an AI request — never in the background and
+            never for pages you simply view. If the page you are editing
+            contains personal or confidential information, that information will
+            be part of the request. We do not proxy, store, or log these
+            requests; they go straight from your device to the provider. The API
+            key itself is stored only in your device&apos;s secure keystore and
+            never transmitted to us. Refer to your provider&apos;s own privacy
+            policy for how they handle API requests.
           </p>
           <p>
             <strong>Google Play</strong> distributes the app and processes
@@ -338,7 +395,36 @@ export default function PrivacyPolicyPage() {
               screen has been shown.
             </li>
             <li>
-              <strong>AI provider API keys</strong> — if you set up the AI
+              <code>@developer_mode_unlocked</code> — whether the developer
+              tools have been unlocked.
+            </li>
+            <li>
+              <code>@bookmarks</code> — your Quick Access entries: the name,
+              URL, query parameters, user agent, and favicon URL you saved for
+              each one.
+            </li>
+            <li>
+              <code>@user_agent_override</code> — the user agent you chose to
+              present to websites, if you set one.
+            </li>
+            <li>
+              <code>@custom_css_by_origin</code> — the custom CSS you have
+              written, stored per website origin so it can be re-applied when
+              you return to that site.
+            </li>
+            <li>
+              <code>@ai_active_provider</code>, <code>@ai_model_*</code> — which
+              AI provider and model you selected.
+            </li>
+            <li>
+              <strong>Locally opened pages</strong> — when you open an HTML or
+              MHTML file from your device, a copy is placed in the app&apos;s
+              own cache directory so the in-app browser can load it. It stays on
+              your device, is never uploaded, and is removed when you clear the
+              app&apos;s data or the operating system reclaims the cache.
+            </li>
+            <li>
+              <strong>AI provider API keys</strong> — if you set up an AI
               assistant, your API key is stored in your device&apos;s secure
               keystore (iOS Keychain / Android Keystore). It is never
               transmitted to us and is only used to make requests directly to
@@ -346,8 +432,10 @@ export default function PrivacyPolicyPage() {
             </li>
           </ul>
           <p>
-            None of this data contains personal information and none of it is
-            shared with us.
+            None of this data is transmitted to us or to any third party. Some
+            of it — a bookmarked URL, or a page you opened from your device —
+            may contain information that is personal to you; it stays on your
+            device, and clearing the app&apos;s data removes it.
           </p>
         </section>
 
