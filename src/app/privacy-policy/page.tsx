@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               Replace images on the page with photos from your device&apos;s
-              photo library or camera.
+              photo library.
             </li>
             <li>
               Take a screenshot of the WebView and either share it via your
@@ -146,6 +146,21 @@ export default function PrivacyPolicyPage() {
             collect data about you; they are granted to the underlying OS
             features the app relies on.
           </p>
+          <p>
+            <strong>
+              Camera, microphone, and location exist for one reason only: so
+              that the websites you open behave the way they would in any other
+              browser.
+            </strong>{" "}
+            The app itself never opens your camera, never records audio, and
+            never reads your location — it contains no code that does any of
+            those things. It holds these permissions purely so it can pass a
+            website&apos;s request on to Android, exactly as Chrome or Firefox
+            would. Android still shows you its own prompt before any page is
+            granted access, you can refuse or revoke it at any time, and nothing
+            captured this way is ever sent to us, stored by us, or used for
+            analytics, advertising, or profiling of any kind.
+          </p>
           <ul>
             <li>
               <strong>Photo library</strong> — so you can pick an image from
@@ -153,23 +168,21 @@ export default function PrivacyPolicyPage() {
               save screenshots you capture to your photo library.
             </li>
             <li>
-              <strong>Camera</strong> — so you can capture a new photo to use
-              as a replacement image, and so websites loaded inside the WebView
+              <strong>Camera</strong> — so websites loaded inside the WebView
               can request camera access (for example, video-calling or
-              QR-scanning pages). We do not capture or transmit camera footage
-              ourselves.
+              QR-scanning pages). Nothing else in the app uses the camera.
             </li>
             <li>
               <strong>Microphone / audio recording</strong> — so websites
               loaded inside the WebView can request microphone access (for
-              example, voice-enabled pages). We do not record audio ourselves.
+              example, voice-enabled pages). Nothing else in the app uses the
+              microphone.
             </li>
             <li>
               <strong>Location</strong> — so websites loaded inside the WebView
               can request your location through the standard browser
-              geolocation API (for example, map and store-finder pages). The
-              app never requests, stores, or transmits your location on its own
-              account, and your device asks you before any page is granted it.
+              geolocation API (for example, map and store-finder pages).
+              Nothing else in the app uses your location.
             </li>
             <li>
               <strong>Storage</strong> (legacy Android 12 and earlier) — to
