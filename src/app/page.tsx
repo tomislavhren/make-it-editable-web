@@ -78,73 +78,78 @@ export default function Home() {
         </nav>
 
         <main className="mx-auto max-w-6xl px-6">
-          {/* Hero */}
-          <section className="pt-16 pb-24 text-center sm:pt-24">
-            <p className="rise font-mono text-[11px] tracking-[0.22em] text-teal uppercase">
-              Android · DevTools in your pocket
-            </p>
-            <h1
-              className="rise mx-auto mt-6 max-w-3xl font-display text-4xl font-medium tracking-[-0.03em] text-balance text-white sm:text-6xl"
-              style={{ animationDelay: "80ms" }}
-            >
-              Inspect &amp; edit any website.
-            </h1>
-            <p
-              className="rise mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-pretty text-muted sm:text-lg"
-              style={{ animationDelay: "160ms" }}
-            >
-              Edit text and images, inspect HTML, monitor network, and debug any
-              website — right from your phone.
-            </p>
-
-            {/* Safari window holding the product footage */}
-            <div
-              className="rise relative mx-auto mt-14 max-w-4xl"
-              style={{ animationDelay: "240ms" }}
-            >
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -inset-x-16 -inset-y-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(30,157,174,0.28)_0%,transparent_70%)] blur-2xl"
-              />
-              <div className="relative">
-                <BrowserFrame url="example.com">
-                  <video
-                    src="/store-video.mp4"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    aria-hidden="true"
-                    className="size-full object-cover"
-                  />
-                </BrowserFrame>
-              </div>
+          {/* Hero — stacked and centred on phones, split into copy | product
+              columns once there is room for the video to sit alongside. */}
+          <section className="grid items-center gap-14 pt-16 pb-24 sm:pt-24 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 lg:pt-28">
+            <div className="text-center lg:text-left">
+              <p className="rise font-mono text-[11px] tracking-[0.22em] text-teal uppercase">
+                Android · DevTools in your pocket
+              </p>
+              <h1
+                className="rise mx-auto mt-6 max-w-3xl font-display text-4xl font-medium tracking-[-0.03em] text-balance text-white sm:text-6xl lg:mx-0 lg:text-5xl xl:text-6xl"
+                style={{ animationDelay: "80ms" }}
+              >
+                Inspect &amp; edit any website.
+              </h1>
+              <p
+                className="rise mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-pretty text-muted sm:text-lg lg:mx-0"
+                style={{ animationDelay: "160ms" }}
+              >
+                Edit text and images, inspect HTML, monitor network, and debug
+                any website — right from your phone.
+              </p>
             </div>
 
-            {/* Google Play badge — official asset, unmodified. The PNG's
-                transparent margin is the required clear space, so it is never
-                cropped and the aspect ratio is preserved. */}
-            <div
-              className="rise mt-10 flex justify-center"
-              style={{ animationDelay: "340ms" }}
-            >
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block transition-opacity hover:opacity-85"
+            <div>
+              {/* Safari window holding the product footage */}
+              <div
+                className="rise relative mx-auto max-w-4xl"
+                style={{ animationDelay: "240ms" }}
               >
-                <Image
-                  src="/google-play-badge.png"
-                  alt="Get it on Google Play"
-                  width={646}
-                  height={250}
-                  unoptimized
-                  priority
-                  className="h-[72px] w-auto sm:h-[88px]"
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -inset-x-16 -inset-y-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(30,157,174,0.28)_0%,transparent_70%)] blur-2xl"
                 />
-              </a>
+                <div className="relative">
+                  <BrowserFrame url="example.com">
+                    <video
+                      src="/store-video.mp4"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-hidden="true"
+                      className="size-full object-cover"
+                    />
+                  </BrowserFrame>
+                </div>
+              </div>
+
+              {/* Google Play badge — official asset, unmodified. The PNG's
+                  transparent margin is the required clear space, so it is never
+                  cropped and the aspect ratio is preserved. */}
+              <div
+                className="rise mt-10 flex justify-center"
+                style={{ animationDelay: "340ms" }}
+              >
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-opacity hover:opacity-85"
+                >
+                  <Image
+                    src="/google-play-badge.png"
+                    alt="Get it on Google Play"
+                    width={646}
+                    height={250}
+                    unoptimized
+                    priority
+                    className="h-[72px] w-auto sm:h-[88px]"
+                  />
+                </a>
+              </div>
             </div>
           </section>
 
