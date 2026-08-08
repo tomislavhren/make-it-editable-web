@@ -1,38 +1,16 @@
-# Next.js Framework Starter
+# Web Editor — Landing Page
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/next-starter-template)
-
-<!-- dash-content-start -->
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's deployed on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
-
-This template uses [OpenNext](https://opennext.js.org/) via the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare), which works by taking the Next.js build output and transforming it, so that it can run in Cloudflare Workers.
-
-<!-- dash-content-end -->
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/next-starter-template
-```
-
-A live public deployment of this template is available at [https://next-starter-template.templates.workers.dev](https://next-starter-template.templates.workers.dev)
+Landing page for [Web Editor: Inspect & Edit](https://play.google.com/store/apps/details?id=com.horseandradish.makeiteditable), built with [Next.js](https://nextjs.org/).
 
 ## Getting Started
 
-First, run:
+Install dependencies:
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
 ```
 
-Then run the development server (using the package manager of your choice):
+Then run the development server:
 
 ```bash
 npm run dev
@@ -40,18 +18,27 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Scripts
 
-## Deploying To Production
+| Command         | Action                                  |
+| :-------------- | :-------------------------------------- |
+| `npm run dev`   | Start the local development server      |
+| `npm run build` | Build the production site               |
+| `npm run start` | Serve the production build locally      |
+| `npm run check` | Build and type-check                    |
+| `npm run lint`  | Lint with ESLint                        |
 
-| Command                           | Action                                       |
-| :-------------------------------- | :------------------------------------------- |
-| `npm run build`                   | Build your production site                   |
-| `npm run preview`                 | Preview your build locally, before deploying |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare    |
-| `npm wrangler tail`               | View real-time logs for all Workers          |
+## Deployment
+
+The site is deployed on [Vercel](https://vercel.com/). Pushes to `main` deploy to production; pull requests get preview deployments.
+
+To deploy manually with the [Vercel CLI](https://vercel.com/docs/cli):
+
+```bash
+npx vercel
+```
 
 ## Learn More
 
@@ -59,5 +46,3 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
