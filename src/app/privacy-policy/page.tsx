@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "July 31, 2026";
+const LAST_UPDATED = "August 8, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-07-31">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-08-08">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -267,6 +267,16 @@ export default function PrivacyPolicyPage() {
             other sensitive values) are never sent.
           </p>
           <p>
+            <strong>Performance metrics (EAS Observe).</strong> We use
+            Expo&apos;s EAS Observe service to collect anonymous
+            app-performance measurements — such as cold and warm launch times,
+            time to first render, time to interactive, and JavaScript bundle
+            load time. These are keyed to an anonymous, installation-specific
+            identifier that is not linked to your name, email, or other
+            identifiers and that resets if you reinstall the app. No page
+            content, edits, or browsing activity is included.
+          </p>
+          <p>
             We <strong>do not</strong> collect the contents of the pages you
             view, the edits you make, the screenshots you take, the
             JavaScript you inject, or the network requests and console logs
@@ -372,6 +382,19 @@ export default function PrivacyPolicyPage() {
             updates via Expo&apos;s EAS Update service (<code>u.expo.dev</code>).
             This request includes device and build metadata needed to serve
             the correct update bundle. See{" "}
+            <a
+              href="https://expo.dev/privacy"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              expo.dev/privacy
+            </a>
+            .
+          </p>
+          <p>
+            <strong>Expo / EAS Observe.</strong> The app sends the anonymous
+            performance metrics described in Section 4 to Expo&apos;s EAS
+            Observe service. See{" "}
             <a
               href="https://expo.dev/privacy"
               target="_blank"
