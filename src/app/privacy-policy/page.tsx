@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "August 8, 2026";
+const LAST_UPDATED = "September 15, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-08-08">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-09-15">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -429,6 +429,10 @@ export default function PrivacyPolicyPage() {
             <li>
               <code>@toolbar_intro_shown</code> — whether the toolbar intro
               screen has been shown.
+            </li>
+            <li>
+              <code>@toolbar_position</code> — where you last docked the
+              floating toolbar (top or bottom edge).
             </li>
             <li>
               <code>@developer_mode_unlocked</code> — whether the developer
