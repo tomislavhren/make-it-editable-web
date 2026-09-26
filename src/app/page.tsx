@@ -113,7 +113,7 @@ export default function Home() {
                 <div className="relative">
                   <BrowserFrame url="example.com">
                     <video
-                      src="/store-video.mp4"
+                      src="/showreel.mp4"
                       autoPlay
                       muted
                       loop
