@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "September 15, 2026";
+const LAST_UPDATED = "October 7, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-09-15">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-10-07">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -118,10 +118,12 @@ export default function PrivacyPolicyPage() {
               device&apos;s photo library.
             </li>
             <li>
-              Use built-in developer tools: a network panel, a console logs
-              panel, an element inspector, an in-page HTML and page-source
-              editor, a per-site custom CSS editor, and a JavaScript injection
-              tool.
+              Use built-in developer tools: a network panel (with the option to
+              copy a request as a cURL command or <code>fetch()</code> call), a
+              console logs panel, an element inspector, an in-page HTML and
+              page-source editor, a per-site custom CSS editor, and a JavaScript
+              injection tool that lets you save snippets (saved scripts) to run
+              manually or automatically when a site you choose loads.
             </li>
             <li>
               Open an HTML or MHTML page you have saved on your device and edit
@@ -248,6 +250,10 @@ export default function PrivacyPolicyPage() {
             <li><code>webview_external_handoff</code> — includes the URL the page tried to open (origin and path only) and whether it opened</li>
             <li><code>webview_load_succeeded</code> — includes the hostname and the URL (origin and path only)</li>
             <li><code>javascript_injected</code> — includes the length (not the contents) of the injected code</li>
+            <li><code>javascript_inject_result</code> — includes whether the script succeeded, the error&apos;s name only (for example &quot;TypeError&quot;; never the message), and whether it was an automatic run</li>
+            <li><code>script_saved</code> — includes whether the script is new, how many auto-run rules it has, and the length (not the contents) of the code</li>
+            <li><code>script_deleted</code>, <code>script_run_from_list</code></li>
+            <li><code>script_auto_run</code> — includes the configured delay</li>
             <li><code>ai_js_generated</code> — includes the AI provider ID, model ID, and generated code length</li>
             <li><code>ai_js_generation_failed</code> — includes the AI provider ID and error message</li>
             <li><code>ai_html_edit_generated</code>, <code>ai_html_edit_failed</code> — includes which editor was used and the generated code length (or the error message); never the page content sent to the provider</li>
@@ -280,7 +286,10 @@ export default function PrivacyPolicyPage() {
             We <strong>do not</strong> collect the contents of the pages you
             view, the edits you make, the screenshots you take, the
             JavaScript you inject, or the network requests and console logs
-            displayed in the developer tools.
+            displayed in the developer tools. The scripts you save, and anything
+            you copy from the developer tools (such as a request copied as cURL,
+            which includes that site&apos;s cookies), stay on your device and
+            clipboard and are never sent to us.
           </p>
           <p>
             <strong>Third-party sites in the WebView.</strong> Websites you
@@ -451,6 +460,11 @@ export default function PrivacyPolicyPage() {
               <code>@custom_css_by_origin</code> — the custom CSS you have
               written, stored per website origin so it can be re-applied when
               you return to that site.
+            </li>
+            <li>
+              <code>@saved_scripts</code> — the JavaScript snippets you saved:
+              each one&apos;s name and code, and the sites (and optional paths
+              and delays) where it runs automatically.
             </li>
             <li>
               <code>@ai_active_provider</code>, <code>@ai_model_*</code> — which
