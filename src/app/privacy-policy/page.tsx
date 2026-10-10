@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "October 7, 2026";
+const LAST_UPDATED = "October 10, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-10-07">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-10-10">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -123,7 +123,14 @@ export default function PrivacyPolicyPage() {
               console logs panel, an element inspector, an in-page HTML and
               page-source editor, a per-site custom CSS editor, and a JavaScript
               injection tool that lets you save snippets (saved scripts) to run
-              manually or automatically when a site you choose loads.
+              manually or automatically when a site you choose loads. On
+              Android, while the editor screen is open and the app is in the
+              foreground, the app enables WebView debugging so the network
+              panel can read the page&apos;s traffic directly from the browser
+              engine and apply your throttle and override settings there; this
+              also makes the page inspectable from a computer connected over
+              USB if you have enabled USB debugging on your device. Debugging
+              is switched off whenever the app goes to the background.
             </li>
             <li>
               Open an HTML or MHTML page you have saved on your device and edit
@@ -236,6 +243,8 @@ export default function PrivacyPolicyPage() {
             <li><code>formatting_applied</code> — includes the formatting command used</li>
             <li><code>image_replaced</code> — includes the MIME type of the image</li>
             <li><code>network_panel_opened</code></li>
+            <li><code>network_capture_status</code> — includes whether the network panel could read traffic from the browser engine (full) or from the page (basic)</li>
+            <li><code>network_capture_error</code> — includes the error message; never the request or its contents</li>
             <li><code>logs_panel_opened</code></li>
             <li><code>element_inspector_opened</code></li>
             <li><code>html_editor_opened</code>, <code>html_edit_applied</code> — includes which editor was used (element, page source, or custom CSS)</li>
