@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "October 10, 2026";
+const LAST_UPDATED = "October 20, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-10-10">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-10-20">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -235,6 +235,7 @@ export default function PrivacyPolicyPage() {
           <ul>
             <li><code>website_preview_started</code> — includes the URL you entered (origin and path only)</li>
             <li><code>settings_opened</code></li>
+            <li><code>manual_opened</code></li>
             <li><code>new_tab_created</code> — includes the new tab URL (origin and path only)</li>
             <li><code>tab_closed</code> — includes the number of remaining tabs</li>
             <li><code>tab_switched</code> — includes the total number of open tabs</li>
@@ -271,6 +272,9 @@ export default function PrivacyPolicyPage() {
             <li><code>purchase_started</code>, <code>purchase_completed</code>, <code>purchase_cancelled</code>, <code>purchase_failed</code> — includes the product ID</li>
             <li><code>restore_completed</code>, <code>restore_failed</code></li>
             <li><code>whats_new_completed</code>, <code>whats_new_skipped</code> — includes the app version and, for skips, the step number</li>
+            <li><code>tip_of_the_day_opened</code> — includes the ID of the day&apos;s tip and whether it had already been seen that day</li>
+            <li><code>tip_viewed</code> — includes the tip ID and its position in the list</li>
+            <li><code>tip_of_the_day_closed</code> — includes how many tips were viewed, the last tip ID, and whether the viewer was closed by finishing the last tip</li>
             <li><code>webview_error_occurred</code> — includes the URL (origin and path only), error code, and error description</li>
             <li><code>app_crash</code> — includes the error name and message</li>
           </ul>
@@ -443,6 +447,10 @@ export default function PrivacyPolicyPage() {
             <li>
               <code>@whats_new_version</code> — which version of the
               &quot;What&apos;s New&quot; screen you last saw.
+            </li>
+            <li>
+              <code>@tip_of_the_day_seen</code> — the date you last opened the
+              tip of the day, so the bulb only lights up for a new tip.
             </li>
             <li>
               <code>@toolbar_intro_shown</code> — whether the toolbar intro
