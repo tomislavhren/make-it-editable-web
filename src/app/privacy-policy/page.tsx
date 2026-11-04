@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "October 28, 2026";
+const LAST_UPDATED = "November 4, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-10-28">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-11-04">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -235,6 +235,7 @@ export default function PrivacyPolicyPage() {
           <ul>
             <li><code>website_preview_started</code> — includes the URL you entered (origin and path only)</li>
             <li><code>settings_opened</code></li>
+            <li><code>home_tab_changed</code> — includes which home tab you switched to</li>
             <li><code>manual_opened</code></li>
             <li><code>new_tab_created</code> — includes the new tab URL (origin and path only)</li>
             <li><code>tab_closed</code> — includes the number of remaining tabs</li>
@@ -256,6 +257,10 @@ export default function PrivacyPolicyPage() {
             <li><code>user_agent_changed</code> — includes whether the device default was chosen and the length (not the value) of the user agent</li>
             <li><code>bookmark_created</code>, <code>bookmark_updated</code>, <code>bookmark_deleted</code> — includes whether a user agent is set and the number of query parameters; never the name or URL</li>
             <li><code>bookmark_opened</code>, <code>bookmark_capture_opened</code> — includes the URL (origin and path only)</li>
+            <li><code>history_entry_opened</code>, <code>history_entry_removed</code> — includes whether the entry was a search, site or file; never its address or name</li>
+            <li><code>history_cleared</code> — includes how many entries were cleared</li>
+            <li><code>zoom_changed</code> — includes the zoom percentage and whether you zoomed in, zoomed out or reset</li>
+            <li><code>demo_site_opened</code>, <code>demo_site_open_failed</code> — the failure event includes the error message</li>
             <li><code>screenshot_saved</code> — includes the current tab URL (origin and path only)</li>
             <li><code>web_share_requested</code> — sent when a website uses its own Share button; includes whether the page provided a title, text, and URL, and how many files it shared; never the shared content, URL, or file names</li>
             <li><code>webview_external_handoff</code> — includes the URL the page tried to open (origin and path only) and whether it opened</li>
@@ -272,10 +277,14 @@ export default function PrivacyPolicyPage() {
             <li><code>paywall_shown</code>, <code>paywall_dismissed</code> — includes the trigger and outcome</li>
             <li><code>purchase_started</code>, <code>purchase_completed</code>, <code>purchase_cancelled</code>, <code>purchase_failed</code> — includes the product ID</li>
             <li><code>restore_completed</code>, <code>restore_failed</code></li>
+            <li><code>customer_center_opened</code></li>
+            <li><code>revenuecat_configure_failed</code>, <code>revenuecat_identify_failed</code>, <code>revenuecat_customerinfo_failed</code>, <code>revenuecat_offerings_failed</code> — includes the error message</li>
+            <li><code>revenuecat_init_skipped</code> — includes the reason</li>
             <li><code>whats_new_completed</code>, <code>whats_new_skipped</code> — includes the app version and, for skips, the step number</li>
             <li><code>tip_of_the_day_opened</code> — includes the ID of the day&apos;s tip and whether it had already been seen that day</li>
             <li><code>tip_viewed</code> — includes the tip ID and its position in the list</li>
             <li><code>tip_of_the_day_closed</code> — includes how many tips were viewed, the last tip ID, and whether the viewer was closed by finishing the last tip</li>
+            <li><code>tip_opened_from_list</code> — includes the tip ID</li>
             <li><code>webview_error_occurred</code> — includes the URL (origin and path only), error code, and error description</li>
             <li><code>app_crash</code> — includes the error name and message</li>
           </ul>
@@ -451,7 +460,7 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               <code>@tip_of_the_day_seen</code> — the date you last opened the
-              tip of the day, so the bulb only lights up for a new tip.
+              tip of the day, so the Tips tab only shows its dot for a new tip.
             </li>
             <li>
               <code>@toolbar_intro_shown</code> — whether the toolbar intro
@@ -469,6 +478,12 @@ export default function PrivacyPolicyPage() {
               <code>@bookmarks</code> — your Quick Access entries: the name,
               URL, query parameters, user agent, and favicon URL you saved for
               each one.
+            </li>
+            <li>
+              <code>@history</code> — the searches, website addresses and local
+              file names you opened, when you opened them, and each site&apos;s
+              favicon URL. You can remove entries or clear it all from the
+              History tab.
             </li>
             <li>
               <code>@user_agent_override</code> — the user agent you chose to
@@ -513,9 +528,16 @@ export default function PrivacyPolicyPage() {
           </ul>
           <p>
             None of this data is transmitted to us or to any third party. Some
-            of it — a bookmarked URL, or a page you opened from your device —
-            may contain information that is personal to you; it stays on your
-            device, and clearing the app&apos;s data removes it.
+            of it — a bookmarked URL, an entry in your history, or a page you
+            opened from your device — may contain information that is personal
+            to you; it stays on your device, and clearing the app&apos;s data
+            removes it.
+          </p>
+          <p>
+            To show site icons in Quick Access and History, the app requests
+            each icon directly from the website, or from the server the website
+            names for it. That server sees the request as it would during any
+            visit.
           </p>
         </section>
 
