@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "October 20, 2026";
+const LAST_UPDATED = "October 28, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-10-20">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-10-28">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -257,6 +257,7 @@ export default function PrivacyPolicyPage() {
             <li><code>bookmark_created</code>, <code>bookmark_updated</code>, <code>bookmark_deleted</code> — includes whether a user agent is set and the number of query parameters; never the name or URL</li>
             <li><code>bookmark_opened</code>, <code>bookmark_capture_opened</code> — includes the URL (origin and path only)</li>
             <li><code>screenshot_saved</code> — includes the current tab URL (origin and path only)</li>
+            <li><code>web_share_requested</code> — sent when a website uses its own Share button; includes whether the page provided a title, text, and URL, and how many files it shared; never the shared content, URL, or file names</li>
             <li><code>webview_external_handoff</code> — includes the URL the page tried to open (origin and path only) and whether it opened</li>
             <li><code>webview_load_succeeded</code> — includes the hostname and the URL (origin and path only)</li>
             <li><code>javascript_injected</code> — includes the length (not the contents) of the injected code</li>
@@ -486,6 +487,14 @@ export default function PrivacyPolicyPage() {
             <li>
               <code>@ai_active_provider</code>, <code>@ai_model_*</code> — which
               AI provider and model you selected.
+            </li>
+            <li>
+              <strong>Files shared by websites</strong> — when a website shares
+              a file (for example a CSV export) through its own Share button, a
+              copy is placed in the app&apos;s cache directory so your
+              device&apos;s share sheet can hand it to the app you choose. It is
+              never uploaded, and it is replaced by the next shared file or
+              removed when the operating system reclaims the cache.
             </li>
             <li>
               <strong>Locally opened pages</strong> — when you open an HTML or
