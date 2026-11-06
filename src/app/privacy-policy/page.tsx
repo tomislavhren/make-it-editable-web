@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "November 4, 2026";
+const LAST_UPDATED = "November 6, 2026";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
 const JURISDICTION = "Republic of Croatia";
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             App Name:{" "}
             <span className="font-medium text-slate-200">Make It Editable</span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-11-04">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-11-06">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -101,8 +101,16 @@ export default function PrivacyPolicyPage() {
             <li>
               Toggle edit mode, which temporarily applies the{" "}
               <code>contenteditable</code> attribute to the page so you can
-              modify text. All changes are temporary and disappear when the
-              page is refreshed or closed.
+              modify text. Changes are temporary and disappear when the page is
+              refreshed or closed, unless you use Save page on a Runner or a
+              local file, which writes them to that file on your device.
+            </li>
+            <li>
+              Save an HTML or MHTML page as a Runner (a Premium feature). The
+              file is kept in the app&apos;s storage on your device, where you
+              can run it, edit it, change its source, and export or delete it.
+              The app also keeps a picture of the page on your device to show
+              in your list of Runners.
             </li>
             <li>
               Apply text formatting (bold, italic, underline, and similar) to
@@ -270,6 +278,11 @@ export default function PrivacyPolicyPage() {
             <li><code>script_saved</code> — includes whether the script is new, how many auto-run rules it has, and the length (not the contents) of the code</li>
             <li><code>script_deleted</code>, <code>script_run_from_list</code></li>
             <li><code>script_auto_run</code> — includes the configured delay</li>
+            <li><code>runner_created</code> — includes how it was created (file, blank page or local tab); never the name or contents</li>
+            <li><code>runner_opened</code> — includes the mode (run, edit or source)</li>
+            <li><code>runner_saved</code> — includes the kind of save (page or source)</li>
+            <li><code>runner_exported</code> — includes a file count range</li>
+            <li><code>runner_import_failed</code> — includes the reason</li>
             <li><code>ai_js_generated</code> — includes the AI provider ID, model ID, and generated code length</li>
             <li><code>ai_js_generation_failed</code> — includes the AI provider ID and error message</li>
             <li><code>ai_html_edit_generated</code>, <code>ai_html_edit_failed</code> — includes which editor was used and the generated code length (or the error message); never the page content sent to the provider</li>
@@ -309,7 +322,8 @@ export default function PrivacyPolicyPage() {
             We <strong>do not</strong> collect the contents of the pages you
             view, the edits you make, the screenshots you take, the
             JavaScript you inject, or the network requests and console logs
-            displayed in the developer tools. The scripts you save, and anything
+            displayed in the developer tools. The scripts you save, the files
+            you save as Runners and the pictures of their pages, and anything
             you copy from the developer tools (such as a request copied as cURL,
             which includes that site&apos;s cookies), stay on your device and
             clipboard and are never sent to us.
@@ -459,6 +473,10 @@ export default function PrivacyPolicyPage() {
               &quot;What&apos;s New&quot; screen you last saw.
             </li>
             <li>
+              <code>runner_save_page_explained</code> — whether the note about
+              what Save page does has been shown.
+            </li>
+            <li>
               <code>@tip_of_the_day_seen</code> — the date you last opened the
               tip of the day, so the Tips tab only shows its dot for a new tip.
             </li>
@@ -526,6 +544,14 @@ export default function PrivacyPolicyPage() {
               your chosen AI provider.
             </li>
           </ul>
+          <p>
+            The files you save as Runners, a picture of each Runner&apos;s page,
+            and any data those pages store (such as localStorage and cookies)
+            are kept in the app&apos;s own storage on your device. They are
+            never uploaded and are not part of Android&apos;s app backup. They
+            stay until you delete the Runner, clear the app&apos;s data or
+            uninstall the app. Export shares a file only when you choose to.
+          </p>
           <p>
             None of this data is transmitted to us or to any third party. Some
             of it — a bookmarked URL, an entry in your history, or a page you
