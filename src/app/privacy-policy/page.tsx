@@ -3,16 +3,17 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Make It Editable – Privacy Policy & Disclaimer",
+  title: "Web Editor: Inspect & Edit – Privacy Policy",
   description:
-    "Privacy Policy and Disclaimer for the Make It Editable mobile application.",
+    "Privacy Policy for the Web Editor: Inspect & Edit Android app, also known as Make It Editable.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/privacy-policy" },
 };
 
-const LAST_UPDATED = "November 6, 2026";
+const LAST_UPDATED = "November 7, 2026";
+const COMPANY = "Truffl d.o.o.";
+const ADDRESS = "Savska 13, 10291 Prudnice, Croatia";
 const SUPPORT_EMAIL = "tomislav@horseandradish.hr";
-const JURISDICTION = "Republic of Croatia";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -23,13 +24,15 @@ export default function PrivacyPolicyPage() {
             Legal
           </p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
-            Privacy Policy & Disclaimer
+            Privacy Policy
           </h1>
           <p className="mt-2 text-sm text-slate-400">
             App Name:{" "}
-            <span className="font-medium text-slate-200">Make It Editable</span>
+            <span className="font-medium text-slate-200">
+              Web Editor: Inspect & Edit
+            </span>
             <span className="mx-2">•</span>
-            Last Updated: <time dateTime="2026-11-06">{LAST_UPDATED}</time>
+            Last Updated: <time dateTime="2026-11-07">{LAST_UPDATED}</time>
           </p>
         </header>
 
@@ -47,11 +50,9 @@ export default function PrivacyPolicyPage() {
             ["#security", "6. Security & Local Storage"],
             ["#rights", "7. Your Rights (GDPR)"],
             ["#children", "8. Children's Privacy"],
-            ["#responsibilities", "9. User Responsibilities"],
-            ["#disclaimer", "10. Disclaimer"],
-            ["#law", "11. Governing Law"],
-            ["#changes", "12. Changes to This Policy"],
-            ["#contact", "13. Contact Us"],
+            ["#terms", "9. Terms of Service"],
+            ["#changes", "10. Changes to This Policy"],
+            ["#contact", "11. Contact Us"],
           ].map(([href, label]) => (
             <Link
               key={href as string}
@@ -70,15 +71,15 @@ export default function PrivacyPolicyPage() {
         >
           <h2>1. Introduction</h2>
           <p>
-            Welcome to <strong>Make It Editable</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;).
-            This Privacy Policy and Disclaimer explain how we handle user data,
-            your responsibilities, and the limitations of our liability. By
-            using the app, you agree to this policy and disclaimer. If you do
-            not agree, please discontinue use.
+            Welcome to <strong>Web Editor: Inspect & Edit</strong>, also known
+            as Make It Editable (&quot;the app&quot;). The app is made by{" "}
+            <strong>{COMPANY}</strong>, {ADDRESS} (&quot;we,&quot; &quot;our,&quot;
+            or &quot;us&quot;). This Privacy Policy explains how we handle user
+            data.
           </p>
           <p>
-            This policy covers both the <strong>Make It Editable</strong>{" "}
-            Android app distributed on Google Play and the marketing website at{" "}
+            This policy covers both the Android app distributed on Google Play
+            and the marketing website at{" "}
             <a href="https://makeiteditable.com">makeiteditable.com</a>.
           </p>
         </section>
@@ -146,8 +147,8 @@ export default function PrivacyPolicyPage() {
             </li>
           </ul>
           <p>
-            <strong>Intended use:</strong> entertainment, testing, and
-            demonstrations (for example, previewing content changes before
+            <strong>Intended use:</strong> testing, development, demonstrations,
+            and entertainment (for example, previewing content changes before
             implementing them).
           </p>
         </section>
@@ -574,8 +575,7 @@ export default function PrivacyPolicyPage() {
         >
           <h2>7. Your Rights (GDPR)</h2>
           <p>
-            <strong>Data controller:</strong> the developer of Make It
-            Editable, reachable at{" "}
+            <strong>Data controller:</strong> {COMPANY}, {ADDRESS}, reachable at{" "}
             <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
           </p>
           <p>
@@ -633,63 +633,28 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        {/* 9. User Responsibilities */}
+        {/* 9. Terms of Service */}
         <section
-          id="responsibilities"
+          id="terms"
           className="prose prose-invert prose-slate max-w-none"
         >
-          <h2>9. User Responsibilities</h2>
-          <ul>
-            <li>
-              Use the app only for lawful, ethical, and personal purposes.
-            </li>
-            <li>
-              Do not use the app to spread misinformation, commit fraud, or
-              violate the rights of others.
-            </li>
-            <li>
-              You are solely responsible for the websites you choose to edit,
-              the modifications you make, the code you inject, and any
-              screenshots you create or share.
-            </li>
-            <li>
-              Misuse may result in access being blocked at the developer&apos;s
-              discretion.
-            </li>
-          </ul>
-        </section>
-
-        {/* 10. Disclaimer */}
-        <section
-          id="disclaimer"
-          className="prose prose-invert prose-slate max-w-none"
-        >
-          <h2>10. Disclaimer</h2>
+          <h2>9. Terms of Service</h2>
           <p>
-            The app is provided <strong>&quot;as is&quot; and &quot;as available.&quot;</strong>{" "}
-            We make no warranties regarding accuracy, reliability, or fitness
-            for a particular purpose. We are not liable for any damages, legal
-            issues, or disputes arising from your use of the app, including
-            misrepresentation of edited content.
+            Our{" "}
+            <Link className="underline" href="/terms-of-service">
+              Terms of Service
+            </Link>{" "}
+            cover your use of the app, including your responsibilities, our
+            disclaimer and liability, and governing law.
           </p>
         </section>
 
-        {/* 11. Governing Law */}
-        <section id="law" className="prose prose-invert prose-slate max-w-none">
-          <h2>11. Governing Law</h2>
-          <p>
-            This Privacy Policy and Disclaimer are governed by the laws of the{" "}
-            {JURISDICTION}. Any disputes will be resolved in the courts of the{" "}
-            {JURISDICTION}.
-          </p>
-        </section>
-
-        {/* 12. Changes to This Policy */}
+        {/* 10. Changes to This Policy */}
         <section
           id="changes"
           className="prose prose-invert prose-slate max-w-none"
         >
-          <h2>12. Changes to This Policy</h2>
+          <h2>10. Changes to This Policy</h2>
           <p>
             We may update this page from time to time. Material changes will be
             reflected by an updated <em>Last Updated</em> date above. Where
@@ -697,12 +662,12 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        {/* 13. Contact Us */}
+        {/* 11. Contact Us */}
         <section
           id="contact"
           className="prose prose-invert prose-slate max-w-none"
         >
-          <h2>13. Contact Us</h2>
+          <h2>11. Contact Us</h2>
           <p>
             Questions about this policy? Email us at{" "}
             <a className="underline" href={`mailto:${SUPPORT_EMAIL}`}>
