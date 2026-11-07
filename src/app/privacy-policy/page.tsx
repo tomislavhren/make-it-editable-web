@@ -1,6 +1,7 @@
 // app/privacy-policy/page.tsx
 import React from "react";
 import Link from "next/link";
+import { LEGAL_SECTION } from "../../components/legal-section";
 
 export const metadata = {
   title: "Web Editor: Inspect & Edit – Privacy Policy",
@@ -67,7 +68,7 @@ export default function PrivacyPolicyPage() {
         {/* 1. Introduction */}
         <section
           id="introduction"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>1. Introduction</h2>
           <p>
@@ -87,7 +88,7 @@ export default function PrivacyPolicyPage() {
         {/* 2. About the App */}
         <section
           id="about"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>2. About the App</h2>
           <p>Make It Editable lets you:</p>
@@ -156,7 +157,7 @@ export default function PrivacyPolicyPage() {
         {/* 3. Permissions */}
         <section
           id="permissions"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>3. Permissions</h2>
           <p>
@@ -225,7 +226,7 @@ export default function PrivacyPolicyPage() {
         {/* 4. Information We Collect */}
         <section
           id="data"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>4. Information We Collect</h2>
           <p>
@@ -340,7 +341,7 @@ export default function PrivacyPolicyPage() {
         {/* 5. Third-Party Services */}
         <section
           id="third-parties"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>5. Third-Party Services</h2>
           <p>
@@ -457,7 +458,7 @@ export default function PrivacyPolicyPage() {
         {/* 6. Security & Local Storage */}
         <section
           id="security"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>6. Security &amp; Local Storage</h2>
           <p>
@@ -571,7 +572,7 @@ export default function PrivacyPolicyPage() {
         {/* 7. Your Rights (GDPR) */}
         <section
           id="rights"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>7. Your Rights (GDPR)</h2>
           <p>
@@ -621,7 +622,7 @@ export default function PrivacyPolicyPage() {
         {/* 8. Children's Privacy */}
         <section
           id="children"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>8. Children&apos;s Privacy</h2>
           <p>
@@ -636,23 +637,20 @@ export default function PrivacyPolicyPage() {
         {/* 9. Terms of Service */}
         <section
           id="terms"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>9. Terms of Service</h2>
           <p>
-            Our{" "}
-            <Link className="underline" href="/terms-of-service">
-              Terms of Service
-            </Link>{" "}
-            cover your use of the app, including your responsibilities, our
-            disclaimer and liability, and governing law.
+            Our <Link href="/terms-of-service">Terms of Service</Link> cover your
+            use of the app, including your responsibilities, our disclaimer and
+            liability, and governing law.
           </p>
         </section>
 
         {/* 10. Changes to This Policy */}
         <section
           id="changes"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>10. Changes to This Policy</h2>
           <p>
@@ -665,15 +663,12 @@ export default function PrivacyPolicyPage() {
         {/* 11. Contact Us */}
         <section
           id="contact"
-          className="prose prose-invert prose-slate max-w-none"
+          className={LEGAL_SECTION}
         >
           <h2>11. Contact Us</h2>
           <p>
             Questions about this policy? Email us at{" "}
-            <a className="underline" href={`mailto:${SUPPORT_EMAIL}`}>
-              {SUPPORT_EMAIL}
-            </a>
-            .
+            <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
           </p>
         </section>
       </section>
