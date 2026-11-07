@@ -198,12 +198,20 @@ export default function Home() {
                 Zero seriousness.
               </span>
             </p>
-            <Link
-              href="/privacy-policy"
-              className="text-[13px] text-white/50 transition-colors hover:text-white"
-            >
-              Privacy Policy
-            </Link>
+            <div className="flex gap-7">
+              <Link
+                href="/privacy-policy"
+                className="text-[13px] text-white/50 transition-colors hover:text-white"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="text-[13px] text-white/50 transition-colors hover:text-white"
+              >
+                Terms of Service
+              </Link>
+            </div>
           </div>
           <div className="mx-auto max-w-6xl px-6 pb-10">
             <p className="text-[11px] text-white/30">
