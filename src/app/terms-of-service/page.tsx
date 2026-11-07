@@ -1,6 +1,7 @@
 // app/terms-of-service/page.tsx
 import React from "react";
 import Link from "next/link";
+import { LEGAL_SECTION } from "../../components/legal-section";
 
 export const metadata = {
   title: "Web Editor: Inspect & Edit – Terms of Service",
@@ -18,10 +19,6 @@ const JURISDICTION = "Republic of Croatia";
 const GOOGLE_PLAY_SUBSCRIPTIONS =
   "https://play.google.com/store/account/subscriptions";
 const GOOGLE_PLAY_REFUNDS = "https://support.google.com/googleplay/answer/2479637";
-
-// The site has no typography plugin, so `prose` classes would do nothing here.
-const SECTION =
-  "mt-10 text-slate-300 [&_a]:underline [&_a]:underline-offset-4 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-slate-100 [&_li]:leading-7 [&_p]:mt-3 [&_p]:leading-7 [&_strong]:text-slate-100 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5";
 
 export default function TermsOfServicePage() {
   return (
@@ -79,7 +76,7 @@ export default function TermsOfServicePage() {
         {/* 1. About These Terms */}
         <section
           id="about-terms"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>1. About These Terms</h2>
           <p>
@@ -97,7 +94,7 @@ export default function TermsOfServicePage() {
         </section>
 
         {/* 2. The App */}
-        <section id="app" className={SECTION}>
+        <section id="app" className={LEGAL_SECTION}>
           <h2>2. The App</h2>
           <p>
             The app opens web pages and lets you edit them on your device,
@@ -119,7 +116,7 @@ export default function TermsOfServicePage() {
         {/* 3. Who Can Use the App */}
         <section
           id="eligibility"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>3. Who Can Use the App</h2>
           <p>
@@ -132,7 +129,7 @@ export default function TermsOfServicePage() {
         {/* 4. Your Right to Use the App */}
         <section
           id="right-to-use"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>4. Your Right to Use the App</h2>
           <p>
@@ -151,7 +148,7 @@ export default function TermsOfServicePage() {
         {/* 5. Your Responsibilities */}
         <section
           id="responsibilities"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>5. Your Responsibilities</h2>
           <p>
@@ -181,7 +178,7 @@ export default function TermsOfServicePage() {
         {/* 6. Websites and AI Providers */}
         <section
           id="third-parties"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>6. Websites and AI Providers</h2>
           <p>
@@ -200,7 +197,7 @@ export default function TermsOfServicePage() {
         {/* 7. Your Files */}
         <section
           id="files"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>7. Your Files</h2>
           <p>
@@ -214,7 +211,7 @@ export default function TermsOfServicePage() {
         {/* 8. Premium Subscription */}
         <section
           id="premium"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>8. Premium Subscription</h2>
           <p>
@@ -265,7 +262,7 @@ export default function TermsOfServicePage() {
         {/* 9. Refunds and Your Consumer Rights */}
         <section
           id="refunds"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>9. Refunds and Your Consumer Rights</h2>
           <p>
@@ -286,7 +283,7 @@ export default function TermsOfServicePage() {
         {/* 10. Changes to the App */}
         <section
           id="changes-to-app"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>10. Changes to the App</h2>
           <p>
@@ -301,7 +298,7 @@ export default function TermsOfServicePage() {
         {/* 11. Disclaimer and Liability */}
         <section
           id="liability"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>11. Disclaimer and Liability</h2>
           <p>
@@ -326,7 +323,7 @@ export default function TermsOfServicePage() {
         {/* 12. Ending Your Use */}
         <section
           id="ending"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>12. Ending Your Use</h2>
           <p>
@@ -339,7 +336,7 @@ export default function TermsOfServicePage() {
         {/* 13. Changes to These Terms */}
         <section
           id="changes"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>13. Changes to These Terms</h2>
           <p>
@@ -352,7 +349,7 @@ export default function TermsOfServicePage() {
         </section>
 
         {/* 14. Governing Law */}
-        <section id="law" className={SECTION}>
+        <section id="law" className={LEGAL_SECTION}>
           <h2>14. Governing Law</h2>
           <p>
             These terms are governed by the laws of the {JURISDICTION}, and
@@ -365,7 +362,7 @@ export default function TermsOfServicePage() {
         {/* 15. Contact Us */}
         <section
           id="contact"
-          className={SECTION}
+          className={LEGAL_SECTION}
         >
           <h2>15. Contact Us</h2>
           <p>
