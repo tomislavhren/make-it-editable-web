@@ -92,8 +92,7 @@ export default function TermsOfServicePage() {
           </p>
           <p>
             Our <Link href="/privacy-policy">Privacy Policy</Link> explains how
-            we handle your data. If these terms and the disclaimer in that
-            policy say different things, these terms apply.
+            we handle your data.
           </p>
         </section>
 
